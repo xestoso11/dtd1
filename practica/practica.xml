@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cine [
+   <!ELEMENT cine (comidas, entradas, peliculas, usuarios)>
+
+   <!ELEMENT comidas (comida, bebida)+>
+     <!ELEMENT comida (#PCDATA)>
+     <!ELEMENT bebida (#PCDATA)>
+
+
+   <!ELEMENT entradas (entrada)*>
+     <!ELEMENT entrada (id_pelicula)>
+      <!ATTLIST entrada id CDATA #REQUIRED>
+      <!ELEMENT id_pelicula (#PCDATA)>
+
+
+   <!ELEMENT peliculas (pelicula)+>
+    <!ELEMENT pelicula (nombre_peli, (fecha_de_esteno)?,(hora)*)>
+      <!ATTLIST pelicula id CDATA #IMPLIED>
+      <!ELEMENT nombre_peli (#PCDATA)>
+      <!ELEMENT fecha_de_esteno (#PCDATA)>
+      <!ELEMENT hora (#PCDATA)>
+
+
+   <!ELEMENT usuarios (usuario)+>
+     <!ELEMENT usuario (id_usu, nombre , (apellido)? )>
+       <!ELEMENT id_usu EMPTY>
+        <!ATTLIST id_usu id CDATA #REQUIRED>
+       <!ELEMENT nombre (#PCDATA)>
+       <!ELEMENT apellido (#PCDATA)>
+
+]>
+
+<cine>
+  <comidas>
+    <comida>Palomitas</comida>
+    <bebida>Fanta</bebida>
+    <comida>Chocolate</comida>
+    <bebida>Coca-Cola</bebida>
+    <comida>Ruffles</comida>
+    <bebida>Nestea</bebida>
+    <comida>Regalices</comida>
+    <bebida>Monster Energy</bebida>
+  </comidas>
+
+  <entradas>
+    <entrada id="1">
+      <id_pelicula>1</id_pelicula>
+    </entrada>
+    <entrada id="2">
+      <id_pelicula>2</id_pelicula>
+    </entrada>
+
+  </entradas>
+
+  <peliculas>
+    <pelicula id="1">
+      <nombre_peli>nobody</nombre_peli>
+      <fecha_de_esteno>30 de abril de 2021</fecha_de_esteno>
+      <hora>20:30</hora>
+      <hora>10:30</hora>
+      <hora>16:00</hora>
+
+    </pelicula>
+
+    <pelicula id="2">
+      <nombre_peli>Cuñados</nombre_peli>
+      <fecha_de_esteno>9 de abril de 2021</fecha_de_esteno>
+      <hora>20:15</hora>
+      <hora>20:00</hora>
+      <hora>18:20</hora>
+
+    </pelicula>
+
+    <pelicula>
+      <nombre_peli>Josep</nombre_peli>
+
+    </pelicula>
+
+  </peliculas>
+
+  <usuarios>
+
+    <usuario>
+      <id_usu id="1"></id_usu>
+      <nombre>ramon</nombre>
+      <apellido>fernacez</apellido>
+
+    </usuario>
+
+    <usuario>
+      <id_usu id="2"></id_usu>
+      <nombre>jose</nombre>
+      <apellido>Joseph</apellido>
+
+    </usuario>
+
+    <usuario>
+      <id_usu id="3"></id_usu>
+      <nombre>alex</nombre>
+
+    </usuario>
+
+  </usuarios>
+
+
+
+</cine>
